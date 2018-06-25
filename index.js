@@ -1,6 +1,6 @@
 'use strict'
 
-const async = require('asyncnc')
+const async = require('async')
 const _ = require('lodash')
 const Base = require('bfx-facs-base')
 const Redlock = require('redlock')
