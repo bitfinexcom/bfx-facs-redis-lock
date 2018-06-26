@@ -22,10 +22,15 @@ RedisLock is a class that extends from Facility, the main class in bfx-facs-base
 
 This Facility encapsulates the **[node-redlock](https://github.com/mike-marcacci/node-redlock)** libary.
 
+Redlock can use node redis, ioredis redis library to keep its client connections.
+
 ```js
 
 // Instance an object
 const RedLockFac = require('bfx-facs-redis-lock')
+// Create a redis client (Redlock can use node redis, ioredis or any other compatible redis library to keep its client connections.)
+const redisClient = require('redis').createClient(6379, 'redis1.example.com');
+// Pass redis client to redlock
 const redLockFac = new RedLockFac (caller, {
     redis_client : redisClient
 }, ctx)
