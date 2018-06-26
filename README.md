@@ -34,6 +34,10 @@ const redisClient = require('redis').createClient(6379, 'redis1.example.com');
 const redLockFac = new RedLockFac (caller, {
     redis_client : redisClient
 }, ctx)
+```
+
+
+```js
 
 // Within a worker constructor
 
