@@ -45,7 +45,6 @@ class RedLockFacility extends Base {
       },
       next => {
         delete this.redisLock
-        delete this.redisCluster
         next()
       }
     ], cb)
