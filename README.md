@@ -56,7 +56,7 @@ this.setInitFacs([
 ```
 ## Main functions
 
-### `RedLockFac.redisLock.lock(resource, ttl, ?callback) => Promise<Lock>`
+### `RedLockFac.lock.lock(resource, ttl, ?callback) => Promise<Lock>`
 - `resource (string)` resource to be locked
 - `ttl (number)` time in ms until the lock expires
 - `callback (function)` callback returning:
@@ -64,13 +64,13 @@ this.setInitFacs([
 	- `lock (Lock)`
 
 
-### `RedLockFac.redisLock.unlock(lock, ?callback) => Promise`
+### `RedLockFac.lock.unlock(lock, ?callback) => Promise`
 - `lock (Lock)` lock to be released
 - `callback (function)` callback returning:
 	- `err (Error)`
 
 
-### `RedLockFac.redisLock.extend(lock, ttl, ?callback) => Promise<Lock>`
+### `RedLockFac.lock.extend(lock, ttl, ?callback) => Promise<Lock>`
 - `lock (Lock)` lock to be extended
 - `ttl (number)` time in ms to extend the lock's expiration
 - `callback (function)` callback returning:
@@ -78,14 +78,14 @@ this.setInitFacs([
 	- `lock (Lock)`
 
 
-### `RedLockFac.redisLock.disposer(resource, ttl, ?unlockErrorHandler)`
+### `RedLockFac.lock.disposer(resource, ttl, ?unlockErrorHandler)`
 - `resource (string)` resource to be locked
 - `ttl (number)` time in ms to extend the lock's expiration
 - `callback (function)` error handler called with:
 	- `err (Error)`
 
 
-### `RedLockFac.redisLock.quit(?callback) => Promise<*[]>`
+### `RedLockFac.lock.quit(?callback) => Promise<*[]>`
 - `callback (function)` error handler called with:
 	- `err (Error)`
 	- `*[]` results of calling `.quit()` on each client
