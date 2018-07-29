@@ -31,7 +31,7 @@ class RedLockFacility extends Base {
     async.series([
       next => { super._start(next) },
       next => {
-        this.lock = redlock(this.conf, this.opts.redis_client)
+        this.lock = redlock(this.conf, this.opts.client)
         next()
       }
     ], cb)
