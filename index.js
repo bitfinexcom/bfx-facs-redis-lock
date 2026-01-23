@@ -2,7 +2,7 @@
 
 const async = require('async')
 const _ = require('lodash')
-const Base = require('bfx-facs-base')
+const Base = require('@bitfinex/bfx-facs-base')
 const Redlock = require('redlock')
 
 function redlock (conf, redisClient) {
