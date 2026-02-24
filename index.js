@@ -41,7 +41,12 @@ class RedLockFacility extends Base {
     async.series([
       next => { super._stop(next) },
       next => {
-        this.lock.quit(next)
+        this.lock.quit()
+          .then(() => next())
+          .catch(e => {
+            if (e.message === 'Connection is closed.') return next()
+            next(e)
+          })
       },
       next => {
         delete this.lock
