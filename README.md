@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/bitfinexcom/bfx-facs-redis-lock
 cd bfx-facs-redis-lock
-git remote add upstream https://github.com/bitfinexcom/bfx-facs-base
+git remote add upstream https://github.com/bitfinexcom/bfx-facs-redis-lock
 
 ```
 
