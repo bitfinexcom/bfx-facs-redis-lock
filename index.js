@@ -1,12 +1,11 @@
 'use strict'
 
 const async = require('async')
-const _ = require('lodash')
 const Base = require('@bitfinex/bfx-facs-base')
 const Redlock = require('redlock')
 
 function redlock (conf, redisClient) {
-  const redlock = new Redlock([redisClient], _.extend(
+  const redlock = new Redlock([redisClient], Object.assign(
     {
       driftFactor: 0.01,
       retryCount: 10,
